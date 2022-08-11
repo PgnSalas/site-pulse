@@ -1,0 +1,12 @@
+.consultation {
+    min-height: 680px;
+    padding: 100px 0px 108px 0px;
+    background: url('../img/consul/BgConsultation.jpg') center center/cover no-repeat;
+    &__descr {
+        margin: 8px 0px 0px 0px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: #FFFFFF;
+    }
+}

@@ -1,0 +1,57 @@
+.carousel {
+    padding: 81px 0px;
+    &__block {
+        // position: relative;
+        max-width: 750px;
+        margin: 0 auto;
+        .prev {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -66px;
+        }
+        .next {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -66px;
+        }
+    }
+    &__dotes {
+        display: flex;
+        justify-content: center;
+        margin: 25px 0px 0px 0px;
+        span {
+            margin: 0px 5px 0px 0px;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .span-last {
+            margin: 0px;
+        }
+    }
+    &__inner {
+        position: relative;
+        max-width: 750px;
+    }
+    .carousel__box {
+        display: none;
+        img {
+            width: 100%;
+        }
+    }
+    .active {
+        display: block;
+    }
+    .dote-active {
+        background-color: #000;
+    }
+}

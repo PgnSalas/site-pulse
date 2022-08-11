@@ -1,0 +1,41 @@
+@import 'base/fonts';
+@import 'base/variables';
+@import 'base/zero';
+
+* {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+}
+.container {
+    max-width: 980px;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+.main {
+    flex: 0 1 auto;
+}
+// ==================================================PROMO=========================================
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/btns';
+
+// ================================================BENEFITS=============================================
+@import 'blocks/benefits';
+@import 'blocks/titles';
+
+// ============================================CONSULTATIONS========================================
+@import 'blocks/consultations';
+@import 'blocks/forms';
+
+// =============================================CAROUSEL=============================================
+@import 'blocks/carousel';
+
+
+
+// ===========================================MEDIA=====================================================
+@import 'base/meadia';

@@ -6,6 +6,21 @@
     }
 }
 
+@media (max-width: 992px) {
+    .carousel {
+        &__box {
+            height: 400px;
+            img {
+                height: 100%;
+            }
+        }
+        span {
+            margin: 0px 13px 0px 0px;
+        }
+    }
+}
+
+
 @media (max-width: 720px) {
     .pormo {
 
@@ -118,6 +133,14 @@
             font-size: 25px;
         }
     }
+    .carousel {
+        &__box {
+            height: 270px;
+            img {
+                height: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 387px) {
@@ -162,5 +185,17 @@
     }
     .feed-form {
         width: 280px;
+    }
+}
+
+@media (max-width: 350px) {
+    .carousel {
+        &__box {
+            // width: 250px;
+            height: 230px;
+            img {
+                height: 100%;
+            }
+        }
     }
 }

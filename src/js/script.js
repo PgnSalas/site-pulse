@@ -63,5 +63,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
     btnNext.addEventListener('click', nextBox);
     btnPrev.addEventListener('click', prevBox);
+
+
+
+    // ====================================CATALOG==================================================
+    const link = document.querySelector('.catalog-item__link'),
+          linkBack = document.querySelector('.catalog-item__wrapper_link'),
+          wrapper = document.querySelector('.catalog-item__wrapper'),
+          wrapper_2 = document.querySelector('.catalog-item__wrapper_2');
+
+
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        wrapper.classList.toggle('catalog-item__wrapper_active');
+        wrapper_2.classList.toggle('catalog-item__wrapper_block');
+    });
+
+
+    linkBack.addEventListener('click', (e) => {
+        e.preventDefault();
+        wrapper_2.classList.toggle('catalog-item__wrapper_block');
+        wrapper.classList.toggle('catalog-item__wrapper_active');
+    }); 
 });
 

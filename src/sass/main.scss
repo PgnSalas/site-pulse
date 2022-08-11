@@ -6,7 +6,7 @@
     font-family: 'Museo Sans Cyrl', sans-serif;
 }
 .container {
-    max-width: 980px;
+    max-width: 980px; // start - 950 end - without padding - 980 (1000px)
     padding: 0px 15px;
     margin: 0 auto;
 }
@@ -36,6 +36,8 @@
 @import 'blocks/carousel';
 
 
+// ===========================================CATALOG===============================================
+@import 'blocks/catalog';
 
 // ===========================================MEDIA=====================================================
 @import 'base/meadia';

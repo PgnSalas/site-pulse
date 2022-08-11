@@ -1,0 +1,150 @@
+.catalog {
+    padding: 0px 0px 79px 0px;
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 46px 0px 0px 0px;
+    }
+    &__tab {
+        width: 222px;
+        height: 52px;
+        // background: rgba(0, 0, 0, 0.0001);
+        transform: skewX(-25deg);
+        border: 2px solid #D0D0D0;
+        font-weight: 400;
+        font-size: 18px;
+        text-transform: capitalize;
+        text-align: center;
+        color: #6B6B6B;
+        margin: 0px 5px;
+        cursor: pointer;
+        transition: 0.4s all;
+        &:hover {
+            box-shadow: 3px 3px 20px $main-color;
+            border: none;
+        }
+        // line-height: 266%;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            transform: skewX(25deg);
+
+        }
+        &_active {
+            background-color: $main-color;
+            color: #fff;
+            border: none;
+        }
+    }
+    &__content {
+        margin: 37px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &-item {
+        flex: 0 1 303px;
+        padding: 20px 20px 20px 20px;
+        // width: 303px;
+        min-height: 442px;
+        border: 1px solid #E8E8E8;
+        margin: 20px 13px 0px 0px;
+        &__img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: 200px;
+        }
+        &__subtitle {
+            margin: 15px 0px 0px 0px;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            color: #0D0D0D;
+        }
+        &__descr {
+            margin: 15px 0px 0px 0px;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 19px;
+            text-align: center;
+            color: #0D0D0D;
+        }
+        &__link {
+            display: block;
+            margin: 10px 0px 20px 0px;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: $main-color;
+        }
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 17px 0px 0px 0px;
+            border-top: 2px solid #e8e8e8;
+        }
+        &__old-price {
+            font-weight: 300;
+            font-size: 14px;
+            // line-height: 14px;
+            text-decoration-line: line-through;
+            color: #555555;
+        }
+        &__price {
+            font-weight: 700;
+            font-size: 20px;
+            color: #050505;
+        }
+        &__wrapper {
+            display: none;
+            &_item {
+                position: relative;
+                padding: 0px 0px 0px 18px;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 150%;
+                color: #555555;
+            }
+            &_item::before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                display: inline-block;
+                // margin: 0px 9px 0px 0px;
+                // border-radius: 50%;
+                width: 7px;
+                height: 7px;
+                background-color: $main-color;
+            }
+            &_link {
+                display: block;
+                margin: 75px 0px 20px 0px;
+                font-weight: 500;
+                font-size: 14px;
+                text-align: center;
+                text-decoration-line: underline;
+                color: #C70101;
+            }
+        }
+    }
+    &-item:last-child {
+        margin: 20px 0px 0px 0px;
+    }
+    .catalog-item__wrapper_block{
+        display: none;
+    }
+    .catalog-item__wrapper_active {
+        display: block;
+    }
+    .item-3 {
+        margin: 20px 0px 0px 0px;
+    }
+
+}

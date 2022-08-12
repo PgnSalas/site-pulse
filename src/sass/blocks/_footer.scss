@@ -1,0 +1,40 @@
+.footer {
+    height: 630px;
+    position: relative;
+    &__info {
+        padding: 50px 68px 60px 68px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 460px;
+        height: 270px;
+        background: $main-color;
+    }
+    &__addr {
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0px 0px 36px 0px;
+    }
+    &__phone {
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0px 0px 36px 0px;
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-item {
+            margin: 0px 27px 0px 0px;
+        }
+    }
+    &__social-item:last-child {
+        margin: 0px;
+    }
+}

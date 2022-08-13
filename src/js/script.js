@@ -144,6 +144,97 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // =========================================MODULES============================================
+    const btns = document.querySelectorAll('[data-modal="consultation"]'),
+          over = document.querySelector('.overlay'),
+          consultation = document.querySelector('#consultation'),
+          btnClose = document.querySelectorAll('.modal__close');
+        //   console.log(btnMini);
+    
 
+    function showModal() {
+        over.style.display = 'block';
+        consultation.style.display = 'block';
+    };
+
+    function hideModal() {
+        over.style.display = 'none';
+        consultation.style.display = 'none';
+    };
+        
+    function clickBtn() {
+        btns.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                showModal();
+            });
+        });    
+    };
+
+    clickBtn();
+
+    function closeBtn() {
+        btnClose.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                hideModal();
+            });
+        });
+        over.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('overlay')) {
+                hideModal();
+            }
+        });
+    };
+
+    closeBtn();
+
+
+    const ord = document.querySelector('#order'),
+          mini = document.querySelectorAll('.button_mini'),
+          subtitle = document.querySelector('#order .modal__descr'),
+          catalSubTitle = document.querySelectorAll('.catalog-item__subtitle'),
+          ordSub = document.querySelector('.modal__subtitle_ord');
+
+
+
+        function showBuy(num, tex) {
+            over.style.display = 'block';
+            ord.style.display = 'block';
+        }
+
+        function removeBuy(tex) {
+            over.style.display = 'none';
+            ord.style.display = 'none';
+        }
+
+        function clickMini() {
+            mini.forEach((btn, i) => {
+                    btn.addEventListener('click', () => { 
+                        catalSubTitle.forEach((tit, j) => {
+                            if (i == j) {
+                                console.log(subtitle.textContent = tit.textContent);  
+                               showBuy();
+                            }
+                        })
+                });
+            });
+        }
+
+        clickMini();
+
+        function hideBuy() {
+            btnClose.forEach((item, i) => {
+                item.addEventListener('click', () => {
+                    removeBuy();
+                });
+            });
+            
+            over.addEventListener('click', (e) => {
+                if (e.target && e.target.classList.contains('overlay')) {
+                    removeBuy();
+                }
+            });
+        }
+
+        hideBuy();
 });
 

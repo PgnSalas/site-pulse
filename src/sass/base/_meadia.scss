@@ -141,6 +141,13 @@
             height: 260px;
         }
     }
+    .modal {
+        padding: 30px;
+        width: 350px;
+    }
+    .feed-form_mt25 {
+        width: 280px;
+    }
 }
 
 @media (max-width: 472px) {
@@ -188,6 +195,21 @@
     }
     .catalog__tab {
         font-size: 13px;
+    }
+    .modal {
+        min-height: 360px;
+        padding: 30px;
+        width: 280px;
+        left: 45%;
+    }
+    .feed-form_mt25 {
+        width: 210px;
+        input {
+            height: 44px;
+        }
+        .button {
+            height: 44px;
+        }
     }
 }
 
@@ -244,6 +266,19 @@
     }
     .feed-form {
         width: 280px;
+    }
+    .modal {
+        padding: 20px;
+        width: 250px;
+    }
+    .feed-form_mt25 {
+        width: 190px;
+        input {
+            width: 200px;
+        }
+        .button_submit {
+            width: 200px;
+        }
     }
 }
 

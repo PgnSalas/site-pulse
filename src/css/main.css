@@ -412,6 +412,9 @@ h1, h2, h3, h4, h5, h6 {
 .feed-form input:nth-child(3) {
   margin-bottom: 20px;
 }
+.feed-form_mt25 {
+  margin: 25px 0px 0px 0px;
+}
 
 .carousel {
   padding: 81px 0px;
@@ -799,6 +802,56 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0px;
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #F2F2F2;
+  width: 380px;
+  min-height: 400px;
+  padding: 38px 40px 40px 40px;
+}
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: -40px;
+  font-size: 41px;
+  line-height: 21px;
+  color: #c70101;
+  cursor: pointer;
+}
+.modal__subtitle {
+  font-weight: 700;
+  font-size: 19px;
+  text-align: center;
+  color: #0D0D0D;
+}
+.modal__descr {
+  margin: 10px 0px 0px 0px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #0D0D0D;
+}
+.modal_mini {
+  min-height: 140px;
+}
+
+#consultation, #order, #thanks {
+  display: none;
+}
+
 @media (max-width: 975px) {
   .carousel__inner .prev, .carousel__inner .next {
     display: none;
@@ -920,6 +973,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 330px;
     height: 260px;
   }
+  .modal {
+    padding: 30px;
+    width: 350px;
+  }
+  .feed-form_mt25 {
+    width: 280px;
+  }
 }
 @media (max-width: 472px) {
   .promo .header__logo {
@@ -958,6 +1018,21 @@ h1, h2, h3, h4, h5, h6 {
   }
   .catalog__tab {
     font-size: 13px;
+  }
+  .modal {
+    min-height: 360px;
+    padding: 30px;
+    width: 280px;
+    left: 45%;
+  }
+  .feed-form_mt25 {
+    width: 210px;
+  }
+  .feed-form_mt25 input {
+    height: 44px;
+  }
+  .feed-form_mt25 .button {
+    height: 44px;
   }
 }
 @media (max-width: 430px) {
@@ -1004,6 +1079,19 @@ h1, h2, h3, h4, h5, h6 {
   }
   .feed-form {
     width: 280px;
+  }
+  .modal {
+    padding: 20px;
+    width: 250px;
+  }
+  .feed-form_mt25 {
+    width: 190px;
+  }
+  .feed-form_mt25 input {
+    width: 200px;
+  }
+  .feed-form_mt25 .button_submit {
+    width: 200px;
   }
 }
 @media (max-width: 350px) {

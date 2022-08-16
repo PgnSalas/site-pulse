@@ -166,8 +166,9 @@ window.addEventListener('DOMContentLoaded', () => {
         btns.forEach((item, i) => {
             item.addEventListener('click', () => {
                 showModal();
+                showInput();
             });
-        });    
+        });   
     };
 
     clickBtn();
@@ -184,6 +185,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
+
 
     closeBtn();
 
@@ -204,17 +206,19 @@ window.addEventListener('DOMContentLoaded', () => {
         function removeBuy(tex) {
             over.style.display = 'none';
             ord.style.display = 'none';
+            hideInput();
         }
 
         function clickMini() {
             mini.forEach((btn, i) => {
-                    btn.addEventListener('click', () => { 
-                        catalSubTitle.forEach((tit, j) => {
-                            if (i == j) {
-                                console.log(subtitle.textContent = tit.textContent);  
-                               showBuy();
-                            }
-                        })
+                btn.addEventListener('click', () => { 
+                    catalSubTitle.forEach((tit, j) => {
+                        if (i == j) {
+                            console.log(subtitle.textContent = tit.textContent);  
+                            showBuy();
+                        }
+                    });
+                    showInput();
                 });
             });
         }
@@ -231,10 +235,57 @@ window.addEventListener('DOMContentLoaded', () => {
             over.addEventListener('click', (e) => {
                 if (e.target && e.target.classList.contains('overlay')) {
                     removeBuy();
+                    hideInput();
                 }
             });
         }
 
         hideBuy();
+
+
+        // =======================================MISTAKE-IN-FORM==================================
+    const form = document.querySelectorAll('.feed-form'),
+          inputs = document.querySelectorAll('.feed-form input'),
+          error = document.querySelectorAll('#error');
+
+
+        function showInput() {
+            inputs.forEach((input, i) => {
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        input.classList.add('error');
+                        error.forEach((item, j) => {
+                            if (j == i) {
+                                item.style.cssText = 'color: red; font-size: 14px; text-transform: uppercase;';
+                                // item.innerHTML = 'Ошибка';   
+                            } 
+                        });
+                    } 
+                });
+                input.addEventListener('focus', () => {
+                    input.classList.remove('error');
+                    error.forEach((item, j) => {
+                        if (j == i) {
+                            item.style.cssText =  '';
+                            item.innerHTML = '';   
+                        } 
+                    });
+                });
+            });
+        }
+        showInput();
+
+        function hideInput() {
+            inputs.forEach((input, i) => {
+                if(input.classList.contains('error')) {
+                    input.classList.remove('error');
+                    error.forEach((er, i) => {
+                        er.innerHTML = '';
+                    });
+                }
+            });
+        }
+
+
 });
 

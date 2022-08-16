@@ -116,9 +116,12 @@
                         Просто заполните форму заявки <br> и мы перезвоним вам в течении 10 минут
                     </div>
                     <form class="feed-form" action="#">
-                        <input name="name" required id="first" type="text" placeholder="Ваше имя">
-                        <input name="phone" required id="first" type="number" placeholder="Ваш телефон">
-                        <input name="email" required id="first" type="email" placeholder="Ваш E-mail">
+                        <div id="error"></div>
+                        <input name="name" id="first" type="text" placeholder="Ваше имя">
+                        <div id="error"></div>
+                        <input name="phone" id="first" type="number" placeholder="Ваш телефон">
+                        <div id="error"></div>
+                        <input name="email" id="first" type="email" placeholder="Ваш E-mail">
 
                         <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
                     </form>
@@ -728,8 +731,11 @@
                 и мы перезвоним вам в течении 10 минут
             </div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" required id="first" type="text" placeholder="Ваше имя">
+                <div id="error"></div>
+                <input name="name"  required id="first" type="text" placeholder="Ваше имя">
+                <div id="error"></div>
                 <input name="phone" required id="first" type="number" placeholder="Ваш телефон">
+                <div id="error"></div>
                 <input name="email" required id="first" type="email" placeholder="Ваш E-mail">
 
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
@@ -745,8 +751,11 @@
                 Пульсометр Polar FT1
             </div>
             <form class="feed-form feed-form_mt25" action="#">
+                <div id="error"></div>
                 <input name="name" required id="first" type="text" placeholder="Ваше имя">
+                <div id="error"></div>
                 <input name="phone" required id="first" type="number" placeholder="Ваш телефон">
+                <div id="error"></div>
                 <input name="email" required id="first" type="email" placeholder="Ваш E-mail">
 
                 <button class="button button_submit">Купить</button>
@@ -764,6 +773,7 @@
         </div>
     </div>
     
+
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -415,6 +415,9 @@ h1, h2, h3, h4, h5, h6 {
 .feed-form_mt25 {
   margin: 25px 0px 0px 0px;
 }
+.feed-form .error {
+  border: 1px solid red;
+}
 
 .carousel {
   padding: 81px 0px;

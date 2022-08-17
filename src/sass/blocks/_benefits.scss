@@ -31,7 +31,7 @@
             font-size: 14px;
             line-height: 128%;
             text-align: center;
-            color: #0D0D0D;
+            color: #0D0D0D; 
             a {
                 display: inline;
                 cursor: pointer;
@@ -42,6 +42,41 @@
                 color: #880909;
             }
         }
+        .benefits__heart_animated {
+            animation: heartbeat 1.5s ease infinite;
+                // animation-name: heartbeat;
+                // animation-duration: 1.5s;
+                // animation-timing-function: ease;
+                // animation-iteration-count: infinite;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+        &_img {
+            // margin: 0px auto 35px auto;
+            // display: block;
+            // position: relative;
+            // img {
+            //     position: absolute;
+            //     left: -30px;
+            //     top: -40px;
+            // }
+            // .icon-left {
+            //     animation-name: icons-left;
+            //     animation-duration: 1s;
+            //     animation-timing-function: linear;
+            //     animation-iteration-count: 1;
+            //     animation-fill-mode: forwards;
+            // }
+            // .icon-right {
+            //     animation-name: icons-right;
+            //     animation-duration: 1s;
+            //     animation-timing-function: linear;
+            //     animation-iteration-count: 1;
+            //     animation-fill-mode: forwards;
+            // }
+        }
     }
 }
+
 

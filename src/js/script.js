@@ -287,5 +287,86 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
 
+        // ====================================SEND-FORM========================================
+        const forms = document.querySelectorAll('form');
+        const thanks = document.querySelector('#thanks');
+
+        const message = {
+            loading: 'img/spinner.svg',
+            success: thanks,
+            failure: 'Failure'
+        };
+
+        forms.forEach((item, i) => {
+            sendData(item);
+        });
+
+        function sendData(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const statusMessage = document.createElement('img');
+                statusMessage.style.cssText = `
+                    position: absolute;
+                    display: block;
+                    margin: 0 auto;
+                `;
+                statusMessage.url = message.loading;
+                form.append(statusMessage);
+
+                const request = new XMLHttpRequest();
+
+                request.open('POST', 'smart.php');
+
+                request.setRequestHeader('Content-type', 'application/json');
+                const formData = new FormData(form);
+                
+                const object = {};
+                formData.forEach((value, key) => {
+                    object[key] = value;
+                });
+
+                const json = JSON.stringify(object);
+
+                request.send(json);
+
+                request.addEventListener('load', () => {
+                    if (request.status === 200) {
+                        console.log(request.response);
+                        statusMessage.textContent = ''; 
+                        form.reset();
+                        consultation.style.display = 'none';
+                        ord.style.display = 'none';
+                        over.style.display = 'block';
+                        thanks.style.display = 'block';
+                        setTimeout(() => {
+                            thanks.style.display = 'none';
+                            over.style.display = 'none';
+                        }, 2000);
+                    } else {
+                        statusMessage.textContent = message.failure;
+                    }
+                });
+            });
+        }
+
+        
+        // =====================================SCROLL TO UP========================================
+        const up = document.querySelector('.pageup');
+        const body = document.querySelector('body');
+        let top = window.pageXOffset;
+        let height = body.scrollHeight;
+        const review__item = document.querySelectorAll('.reviews-item');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 1600) { // когда пролистали больше чем 1600 работает условие
+                console.log('Gleb');
+                up.style.display = 'block';
+            } else {
+                up.style.display = 'none';
+            }
+        });
+
+        new WOW().init();
 });
 

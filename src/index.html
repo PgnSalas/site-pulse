@@ -7,11 +7,13 @@
     <title>Pulse</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/animate.css"/>
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
     <div class="wrapper">
-        <div class="promo">
+        <div id="up" class="promo">
             <div class="container">
                 <header class="header">
                     <a class="header__logo">
@@ -71,7 +73,7 @@
                     <div class="benefits__wrapper">
                         <div class="benefits__item item__benefits">
                             <div class="item__benefits_img">
-                                <img src="icons/benefints/cup.png" alt="cup">
+                                <img src="icons/benefints/cup-removebg.png" class="icon-left" alt="cup">
                             </div>
                             <div class="item__benefits_title">
                                 <h4>Делимся опытом</h4>
@@ -82,7 +84,7 @@
                         </div>
                         <div class="benefits__item item__benefits">
                             <div class="item__benefits_img">
-                                <img src="icons/benefints/heart.png" alt="heart">
+                                <img src="icons/benefints/heart-removebg.png" alt="heart" class="benefits__heart_animated">
                             </div>
                             <div class="item__benefits_title">
                                 <h4>Заботимся о здоровье</h4>
@@ -93,7 +95,7 @@
                         </div>
                         <div class="benefits__item item__benefits">
                             <div class="item__benefits_img">
-                                <img src="icons/benefints/shoe.png" alt="shoe">
+                                <img src="icons/benefints/shoe-removebg-preview.png" class="icon-right" alt="shoe">
                             </div>
                             <div class="item__benefits_title">
                                 <h4>Учим бегать</h4>
@@ -117,11 +119,11 @@
                     </div>
                     <form class="feed-form" action="#">
                         <div id="error"></div>
-                        <input name="name" id="first" type="text" placeholder="Ваше имя">
+                        <input name="name" required id="first" type="text" placeholder="Ваше имя">
                         <div id="error"></div>
-                        <input name="phone" id="first" type="number" placeholder="Ваш телефон">
+                        <input name="phone" required id="first" type="number" placeholder="Ваш телефон">
                         <div id="error"></div>
-                        <input name="email" id="first" type="email" placeholder="Ваш E-mail">
+                        <input name="email" required id="first" type="email" placeholder="Ваш E-mail">
 
                         <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
                     </form>
@@ -660,7 +662,7 @@
                 <h2 class="title">отзывы клиентов</h2>
                 <div class="container">
                     <div class="reviews__wrapper">
-                         <div class="reviews-item">
+                         <div class="reviews-item animate__animated animate__fadeInUp wow data-wow-duration="2s" data-wow-delay="0.6s">
                             <div class="reviews-item__img">
                                 <img src="img/reviews/photo_1.png" alt="win">
                             </div>
@@ -674,7 +676,7 @@
                                 </div>
                             </div>
                          </div>
-                         <div class="reviews-item">
+                         <div class="reviews-item animate__animated animate__fadeInUp wow data-wow-duration="2s" data-wow-delay="0.6s">
                             <div class="reviews-item__img">
                                 <img src="img/reviews/photo_2.png" alt="win">
                             </div>
@@ -688,7 +690,7 @@
                                 </div>
                             </div>
                          </div>
-                         <div class="reviews-item">
+                         <div class="reviews-item animate__animated animate__fadeInUp wow data-wow-duration="2s" data-wow-delay="0.6s">
                             <div class="reviews-item__img">
                                 <img src="img/reviews/photo_3.png" alt="win">
                             </div>
@@ -772,8 +774,12 @@
             </div>
         </div>
     </div>
-    
 
+    <a href="#up" class="pageup">
+        <img src="img/page_up.svg" alt="up">
+    </a>
+
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

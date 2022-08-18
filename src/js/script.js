@@ -246,7 +246,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // =======================================MISTAKE-IN-FORM==================================
     const form = document.querySelectorAll('.feed-form'),
           inputs = document.querySelectorAll('.feed-form input'),
-          error = document.querySelectorAll('#error');
+          error = document.querySelectorAll('.err');
 
 
         function showInput() {
@@ -332,7 +332,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 request.addEventListener('load', () => {
                     if (request.status === 200) {
-                        console.log(request.response);
+                        // console.log(request.response);
                         statusMessage.textContent = ''; 
                         form.reset();
                         consultation.style.display = 'none';
@@ -360,7 +360,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 1600) { // когда пролистали больше чем 1600 работает условие
-                console.log('Gleb');
+                // console.log('Gleb');
                 up.style.display = 'block';
             } else {
                 up.style.display = 'none';

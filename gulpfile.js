@@ -6,6 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const imgCompress  = require('imagemin-jpeg-recompress');
 
 gulp.task('server', function() {
     browserSync({
@@ -30,6 +31,7 @@ gulp.task('styles', function() {
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
+    gulp.watch("src/img/**/*.*", gulp.parallel('images'));
 }); 
 
 gulp.task('html', function() {
@@ -39,28 +41,59 @@ gulp.task('html', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src("src/js/*/.js")
+    return gulp.src("src/js/*.js")
         .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task('fonts', function() {
-    return gulp.src("src/fonts/**/*/")
+    return gulp.src("src/fonts/*")
         .pipe(gulp.dest("dist/fonts"));
 });
 
+gulp.task('php', function() {
+    return gulp.src("src/smart.php")
+        .pipe(gulp.dest("dist/"));
+});
+
+
 gulp.task('icons', function() {
-    return gulp.src("src/icons/**/*/")
-        .pipe(gulp.dest("dist/icons"));
+    return gulp.src("src/icons/**/*.+(svg|png|jpeg)")
+    .pipe(imagemin([
+        imgCompress({
+            loops: 4,
+            min: 70,
+            max: 80,
+            quality: 'high'
+        }),
+        imagemin.gifsicle(),
+        imagemin.optipng(),
+        imagemin.svgo()
+        ]))
+    .pipe(gulp.dest("dist/icons"));
 });
 
 gulp.task('mailer', function() {
-    return gulp.src("src/mailer/**/*/")
+    return gulp.src("src/mailer/**/*")
         .pipe(gulp.dest("dist/mailer"));
 });
 
 gulp.task('images', function() {
-    return gulp.src("src/img/**/*/")
-        .pipe(imagemin())
+    return gulp.src("src/img/**/*.+(jpg|png|jpeg)")
+    .pipe(imagemin([
+        imgCompress({
+          loops: 4,
+          min: 70,
+          max: 80,
+          quality: 'high'
+        }),
+        imagemin.gifsicle(),
+        imagemin.optipng(),
+        imagemin.svgo()
+      ]))
+        .pipe(gulp.dest("dist/img"));
+});
+gulp.task('svg', function() {
+    return gulp.src("src/img/**/*.+(svg|ico)")
         .pipe(gulp.dest("dist/img"));
 });
 

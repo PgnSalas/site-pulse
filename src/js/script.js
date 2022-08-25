@@ -314,11 +314,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 statusMessage.url = message.loading;
                 form.append(statusMessage);
 
-                const request = new XMLHttpRequest();
+                // const request = new XMLHttpRequest();
 
-                request.open('POST', 'smart.php');
+                // request.open('POST', 'smart.php');
 
-                request.setRequestHeader('Content-type', 'application/json');
+                // request.setRequestHeader('Content-type', 'application/json');
                 const formData = new FormData(form);
                 
                 const object = {};
@@ -326,27 +326,52 @@ window.addEventListener('DOMContentLoaded', () => {
                     object[key] = value;
                 });
 
-                const json = JSON.stringify(object);
-
-                request.send(json);
-
-                request.addEventListener('load', () => {
-                    if (request.status === 200) {
-                        // console.log(request.response);
-                        statusMessage.textContent = ''; 
-                        form.reset();
-                        consultation.style.display = 'none';
-                        ord.style.display = 'none';
-                        over.style.display = 'block';
-                        thanks.style.display = 'block';
-                        setTimeout(() => {
-                            thanks.style.display = 'none';
-                            over.style.display = 'none';
-                        }, 2000);
-                    } else {
-                        statusMessage.textContent = message.failure;
-                    }
+                fetch('smart.php', {
+                    method: "POST",
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(object)
+                })
+                .then(data => data.text())
+                .then(data => {
+                    console.log(data);
+                    ord.style.display = 'none';
+                    consultation.style.display = 'none';
+                    over.style.display = 'block';
+                    thanks.style.display = 'block';
+                }).then(() => {
+                    setTimeout(() => {
+                        thanks.style.display = 'none';
+                        over.style.display = 'none';
+                    }, 2000);
+                }).catch(() => {
+                    statusMessage.textContent = message.failure;
+                }).finally(() => {
+                    form.reset();
                 });
+
+                // const json = JSON.stringify(object);
+
+                // request.send(json);
+
+                // request.addEventListener('load', () => {
+                //     if (request.status === 200) {
+                //         // console.log(request.response);
+                //         statusMessage.textContent = ''; 
+                //         form.reset();
+                //         consultation.style.display = 'none';
+                //         ord.style.display = 'none';
+                //         over.style.display = 'block';
+                //         thanks.style.display = 'block';
+                //         setTimeout(() => {
+                //             thanks.style.display = 'none';
+                //             over.style.display = 'none';
+                //         }, 2000);
+                //     } else {
+                //         statusMessage.textContent = message.failure;
+                //     }
+                // });
             });
         }
 
